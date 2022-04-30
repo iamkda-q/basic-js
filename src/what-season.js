@@ -21,7 +21,11 @@ function getSeason(date) {
   // if (!(date instanceof Date)) {
   //   throw new Error("Invalid date!");
   // }
-  // console.log(date.prototype.isPrototypeOf(Date));
+
+  // if (Object.prototype.toString.call(date) !== "[object Date]") {
+  //   throw new Error("Invalid date!");
+  // }
+  // // console.log(date.prototype.isPrototypeOf(Date));
 
   //   const d = date.getMonth();
   //   const season =
@@ -38,7 +42,7 @@ function getSeason(date) {
   //           : "Invalid date!";
 
   //           return season;
-    // throw new Error();
+  //   throw new Error();
 }
 
 module.exports = {

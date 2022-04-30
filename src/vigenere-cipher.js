@@ -27,16 +27,40 @@ class VigenereCipheringMachine {
     if (!message || !key) {
       throw new Error("Incorrect arguments!");
     }
-    cons
-    if (this.isDirect) {
-      return message
+    const messageWithoutSpace = message.replace(/\s/g, "")
+    let keyMessage = messageWithoutSpace.split("");
+    let i =0
+while(i<messageWithoutSpace.length) {
+  for (let j=0; j<key.length; j++) {
+    keyMessage[i] = key[j]
+    i++
+  }
+}
+
+    for (let i=0; i<messageWithoutSpace.length; i++) {
+      for (let j=0; j<key.length; j++) {
+        keyMessage[i] = key[j]
+        i++
+      }
+
     }
+    return keyMessage
+
+
+
+/*     if (this.isDirect) {
+      
+    } */
   }
   decrypt(encryptedMessage, key) {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 }
+
+const a = new VigenereCipheringMachine(true);
+
+console.log(a.encrypt("attack at dawn", "lemon"));
 
 module.exports = {
   VigenereCipheringMachine
